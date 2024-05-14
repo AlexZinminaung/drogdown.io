@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Handle Bar Pratice</title>
+        <link href="style.css" rel="stylesheet">
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" 
+        integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script id="entry-template" type="text/x-handlebars-template">
+            {{#each schools}}
+            <div class="school-box">
+
+                <div class="school-label"><h1>{{this.name}}</h1></div>
+
+                <div class="school-contant">
+                    <p class="grade">{{this.class}}</p>
+                    <p class="address">{{this.address}}</p>
+                    <iframe src={{this.mapLink}} 
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+                </div>
+
+            </div>
+            {{/each}}
+        </script>
+
+        <script src="./script.js" defer></script>
+
+    </head>
+
+    <body>
+        <section class="schools-container" id="school-information">
+
+            
+            <!-- ADD script to open the school content -->
+            <script src="./openSchoolContent.js" defer></script>
+        </section>
+    </body>
+</html>
